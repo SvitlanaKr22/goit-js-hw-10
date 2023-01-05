@@ -21,9 +21,9 @@ Notify.init({
   position: 'center-top',
 });
 
-inputdata = document.querySelector('#search-box');
-list = document.querySelector('.country-list');
-div = document.querySelector('.country-info');
+const inputdata = document.querySelector('#search-box');
+const list = document.querySelector('.country-list');
+const div = document.querySelector('.country-info');
 
 inputdata.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
