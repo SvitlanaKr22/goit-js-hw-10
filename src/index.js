@@ -21,12 +21,11 @@ Notify.init({
   position: 'center-top',
 });
 
-inputCountry = document.querySelector('#search-box');
+inputdata = document.querySelector('#search-box');
 list = document.querySelector('.country-list');
 div = document.querySelector('.country-info');
-//isClear();
 
-inputCountry.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
+inputdata.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(evt) {
   isClear();
