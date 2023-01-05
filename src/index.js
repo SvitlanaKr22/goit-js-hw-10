@@ -32,17 +32,17 @@ function onInput(evt) {
   if (evt.target.value.trim() === '') return;
 
   fetchCountries(evt.target.value.trim())
-    .then(countries => {
-      if (countries.length > 10) {
-        Notify.info(
-          'Too many matches found. Please enter a more specific name.'
-        );
-        return;
-      }
-      if (countries.length > 1) list.innerHTML = creatMarkUp(countries);
-      else div.innerHTML = markUpCountry(countries[0]);
-    })
+    .then(renderCountry)
     .catch(() => Notify.failure('Oops, there is no country with that name'));
+}
+
+function renderCountry(countries) {
+  if (countries.length > 10) {
+    Notify.info('Too many matches found. Please enter a more specific name.');
+    return;
+  }
+  if (countries.length > 1) list.innerHTML = creatMarkUp(countries);
+  else div.innerHTML = markUpCountry(countries[0]);
 }
 
 function creatMarkUp(countries) {
